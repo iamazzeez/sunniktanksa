@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunnik Tanks KSA - Premium Water Storage Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="Sunnik Logo" class="logo" onerror="this.style.display='none'">
+                <span class="brand-name">SUNNIK TANKS KSA</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#sunnik" class="nav-link">Sunnik</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="hero">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <div class="carousel-overlay"></div>
+                <img src="images/hero1.jpg" alt="Water Storage Solutions" onerror="this.src='https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1920&h=1080&fit=crop'">
+                <div class="carousel-content">
+                    <h1 class="animate-fade-in">Reliable Water Storage for a Sustainable Future</h1>
+                    <p class="animate-fade-in-delay">GRP, HDG Steel & Stainless Steel Panel Tanks</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="carousel-overlay"></div>
+                <img src="images/hero2.jpg" alt="Industrial Excellence" onerror="this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&h=1080&fit=crop'">
+                <div class="carousel-content">
+                    <h1 class="animate-fade-in">Trusted in 42+ Countries Worldwide</h1>
+                    <p class="animate-fade-in-delay">From Burj Khalifa to Tadawul Tower - Proven Excellence</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="carousel-indicators">
+            <span class="indicator active" onclick="currentSlide(0)"></span>
+            <span class="indicator" onclick="currentSlide(1)"></span>
+        </div>
+        <div class="hero-buttons">
+            <a href="downloads/company-profile.pdf" class="btn btn-primary" download>
+                <i class="fas fa-download"></i> Download Company Profile
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Products</h2>
+                <p class="section-subtitle">Premium quality water storage tanks for every need</p>
+            </div>
+            <div class="products-grid">
+                <!-- GRP Tank -->
+                <div class="product-card" data-product="grp">
+                    <div class="product-image">
+                        <img src="images/grp-tank.jpg" alt="GRP Tank" onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=600&fit=crop'">
+                        <div class="product-overlay">
+                            <button class="btn-view" onclick="openProduct('grp')">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>GRP Panel Tanks</h3>
+                        <p>Glass Reinforced Polymer combining strength, durability, and light weight with 6X Safety Factor</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Modular & hygienic design</li>
+                            <li><i class="fas fa-check"></i> Weather & disaster-resistant</li>
+                            <li><i class="fas fa-check"></i> 240× better insulation than steel</li>
+                        </ul>
+                        <a href="downloads/grp-catalog.pdf" class="btn-download" download>
+                            <i class="fas fa-file-pdf"></i> Download Catalog
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HDG Tank -->
+                <div class="product-card" data-product="hdg">
+                    <div class="product-image">
+                        <img src="images/hdg-tank.jpg" alt="HDG Tank" onerror="this.src='https://images.unsplash.com/photo-1586864387634-bfc4682e3e6e?w=800&h=600&fit=crop'">
+                        <div class="product-overlay">
+                            <button class="btn-view" onclick="openProduct('hdg')">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>HDG Steel Panel Tanks</h3>
+                        <p>Hot-Dip Galvanized Steel offering exceptional strength and corrosion resistance</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Heavy-duty industrial grade</li>
+                            <li><i class="fas fa-check"></i> Modular panel construction</li>
+                            <li><i class="fas fa-check"></i> Large-scale storage capacity</li>
+                        </ul>
+                        <a href="downloads/hdg-catalog.pdf" class="btn-download" download>
+                            <i class="fas fa-file-pdf"></i> Download Catalog
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SS Tank -->
+                <div class="product-card" data-product="ss">
+                    <div class="product-image">
+                        <img src="images/ss-tank.jpg" alt="SS Tank" onerror="this.src='https://images.unsplash.com/photo-1582735689249-1c2f40d3f567?w=800&h=600&fit=crop'">
+                        <div class="product-overlay">
+                            <button class="btn-view" onclick="openProduct('ss')">View Details</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Stainless Steel Tanks</h3>
+                        <p>SS304, SS316 & SS444 Grade tanks - NSF61/ANSI certified for superior hygiene</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> FDA food-safe certified</li>
+                            <li><i class="fas fa-check"></i> SPAN approved for municipal use</li>
+                            <li><i class="fas fa-check"></i> Contamination-free manufacturing</li>
+                        </ul>
+                        <a href="downloads/ss-catalog.pdf" class="btn-download" download>
+                            <i class="fas fa-file-pdf"></i> Download Catalog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Us</h2>
+                    <p class="highlight">Aspire Solutions - Your Trusted Partner</p>
+                    <p>At Aspire Solutions, we are dedicated to delivering premium water storage solutions as the authorised distribution and installation partner of Sunnik Panel Tanks in the region. Our mission is to be Saudi Arabia's most trusted name in the water storage solutions industry, supporting the Kingdom's growth and development vision.</p>
+                    <p>We are committed to delivering reliable Panel Tanks that are built to last and engineered to withstand the region's demanding climate and environmental conditions. Through innovation and reliability, we aim to set new benchmarks for water storage excellence across the Kingdom.</p>
+                    <p>We aim not only to meet but to exceed customer expectations with our service and delivery. Our ambition is to be the partner of choice for organisations seeking trusted, future-ready water storage solutions that create long-term value for our clients.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>42+</h3>
+                            <p>Countries Worldwide</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>NSF/WRAS</h3>
+                            <p>Certified Excellence</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>6X</h3>
+                            <p>Safety Factor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="About Us" onerror="this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&h=800&fit=crop'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sunnik Section -->
+    <section id="sunnik" class="sunnik">
+        <div class="container">
+            <div class="sunnik-content">
+                <div class="sunnik-image">
+                    <img src="images/sunnik-logo.png" alt="Sunnik" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=800&fit=crop'">
+                </div>
+                <div class="sunnik-text">
+                    <h2 class="section-title">Sunnik - Our Manufacturing Partner</h2>
+                    <p class="highlight">Global Leader in Water Storage Technology</p>
+                    <p>With a presence in over 42 countries worldwide and compliance with top-notch international standards and certifications such as NSF and WRAS, Sunnik has earned the trust of clients across diverse climates and industries—from the Middle East and Asia to Africa, Europe, and beyond—ensuring reliability, safety, and durability.</p>
+                    <p>Sunnik has delivered reliable water storage solutions for landmarks such as Burj Khalifa (UAE), Petronas Twin Towers (Malaysia), Tadawul Tower (Saudi Arabia), and Kuala Lumpur International Airport (KLIA I & II), reflecting its engineering excellence and project reliability.</p>
+                    <div class="partner-info">
+                        <div class="partner-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Built for Gulf's Climate</h4>
+                                <p>Proven durability against high temperatures, salinity, and strict regulatory standards</p>
+                            </div>
+                        </div>
+                        <div class="partner-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <h4>Global Presence</h4>
+                                <p>Serving customers in 42+ countries across continents</p>
+                            </div>
+                        </div>
+                        <div class="partner-item">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Iconic Projects</h4>
+                                <p>From Burj Khalifa to Petronas Twin Towers - World-class installations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://sunnik.net/" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> Visit Sunnik Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Iconic Projects Section -->
+    <section id="projects" class="projects-showcase">
+        <div class="container">
+            <h2 class="section-title">Sunnik's Exceptional Track Record</h2>
+            <p class="section-subtitle">Trusted in landmark projects across the globe</p>
+            <div class="projects-grid">
+                <div class="project-card-showcase">
+                    <div class="project-image-showcase">
+                        <img src="images/burj-khalifa.jpg" alt="Burj Khalifa" onerror="this.src='https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop'">
+                    </div>
+                    <div class="project-info-showcase">
+                        <h3>Burj Khalifa, UAE</h3>
+                        <p>SS316 stainless steel water tanks for the world's tallest building</p>
+                        <span class="project-tag">Stainless Steel</span>
+                    </div>
+                </div>
+                <div class="project-card-showcase">
+                    <div class="project-image-showcase">
+                        <img src="images/tadawul-tower.jpg" alt="Tadawul Tower" onerror="this.src='https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=600&fit=crop'">
+                    </div>
+                    <div class="project-info-showcase">
+                        <h3>Tadawul Tower, Saudi Arabia</h3>
+                        <p>SS444-grade tanks highlighting local credibility and proven performance</p>
+                        <span class="project-tag">SS444 Grade</span>
+                    </div>
+                </div>
+                <div class="project-card-showcase">
+                    <div class="project-image-showcase">
+                        <img src="images/petronas.jpg" alt="Petronas Twin Towers" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&h=600&fit=crop'">
+                    </div>
+                    <div class="project-info-showcase">
+                        <h3>Petronas Twin Towers, Malaysia</h3>
+                        <p>Reliable water storage solutions reflecting engineering excellence</p>
+                        <span class="project-tag">Panel Tanks</span>
+                    </div>
+                </div>
+                <div class="project-card-showcase">
+                    <div class="project-image-showcase">
+                        <img src="images/sports-city.jpg" alt="Sports City Tower" onerror="this.src='https://images.unsplash.com/photo-1541697418485-1e6cb3149dd0?w=800&h=600&fit=crop'">
+                    </div>
+                    <div class="project-info-showcase">
+                        <h3>Sports City Tower, Doha</h3>
+                        <p>Premium water storage for major infrastructure facilities across Qatar</p>
+                        <span class="project-tag">Infrastructure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Sunnik Product Certifications</h2>
+            <p class="section-subtitle">Internationally recognized quality standards</p>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>UL</h3>
+                    <p>Underwriters Laboratories</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-water"></i>
+                    <h3>WRAS</h3>
+                    <p>Water Regulations Advisory</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>NSF</h3>
+                    <p>NSF/ANSI 61 Certified</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-building"></i>
+                    <h3>NCREE</h3>
+                    <p>Earthquake Engineering</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>SPAN</h3>
+                    <p>Malaysia Water Authority</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>TÜV SÜD PSB</h3>
+                    <p>Singapore Certification</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-award"></i>
+                    <h3>MS SIRIM</h3>
+                    <p>Malaysian Standards</p>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Intertek</h3>
+                    <p>Quality & Safety</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">We'd love to hear from you</p>
+            <div class="contact-content">
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Address</h3>
+                        <p>Dammam 36332, P.O. Box 35850<br>Kingdom of Saudi Arabia</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>+966 54 793 9470</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>sales@sunniktanksa.com</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Our Partner</h3>
+                        <p><a href="https://www.aspiresolutions-co.com/" target="_blank">Aspire Solutions</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Sunnik Tanks KSA</h3>
+                    <p>Premium water storage solutions for residential, commercial, and industrial applications.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#" onclick="openProduct('grp')">GRP Tanks</a></li>
+                        <li><a href="#" onclick="openProduct('hdg')">HDG Tanks</a></li>
+                        <li><a href="#" onclick="openProduct('ss')">SS Tanks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Partners</h3>
+                    <ul>
+                        <li><a href="https://sunnik.net/" target="_blank">Sunnik</a></li>
+                        <li><a href="https://www.aspiresolutions-co.com/" target="_blank">Aspire Solutions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sunnik Tanks KSA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/966547939470?text=Hello! I'm interested in your water storage tanks." class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProduct()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
