@@ -1,6 +1,6 @@
-# Sunnik Tanks KSA - Website
+# Sunniktanksa - Website
 
-A modern, aesthetic single-page website for Sunnik Tanks KSA, featuring premium water storage solutions.
+A modern, aesthetic single-page website for Sunniktanksa, featuring premium water storage solutions.
 
 ## Domain
 **https://sunniktanksa.com/**
@@ -160,4 +160,4 @@ Simply upload all files to your hosting provider.
 **Website:** https://sunniktanksa.com/
 
 ## License
-© 2025 Sunnik Tanks KSA. All rights reserved.
+© 2025 Sunniktanksa. All rights reserved.
