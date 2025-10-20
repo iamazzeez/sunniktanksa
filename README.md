@@ -42,11 +42,13 @@ A modern, aesthetic single-page website for Sunniktanksa, featuring premium wate
 - Copyright information
 
 ## Technologies Used
-- **HTML5**: Semantic markup
+- **HTML5**: Semantic markup with SEO optimization
 - **CSS3**: Modern styling with CSS Grid and Flexbox
 - **Vanilla JavaScript**: Interactive features, no framework dependencies
 - **Font Awesome**: Icon library
 - **Google Fonts**: Poppins font family
+- **Schema.org**: Structured data for search engines
+- **Open Graph**: Social media optimization
 
 ## Directory Structure
 
@@ -129,6 +131,37 @@ Update in `index.html` line with the WhatsApp button:
 - Add more product images in gallery
 - Add customer testimonials section
 - Add multilingual support (Arabic/English)
+
+## SEO Optimization ✅
+
+The website is fully optimized for search engines:
+
+### Implemented:
+- ✅ **Meta Tags**: Title, description, keywords optimized for Saudi Arabia market
+- ✅ **Open Graph Tags**: Social media sharing optimization
+- ✅ **Twitter Cards**: Twitter sharing optimization
+- ✅ **Schema.org Structured Data**: LocalBusiness markup for Google
+- ✅ **Geo-Targeting**: Location tags for Dammam, Saudi Arabia
+- ✅ **robots.txt**: Search engine crawling configuration
+- ✅ **sitemap.xml**: Complete site structure for indexing
+- ✅ **Canonical URLs**: Prevent duplicate content
+- ✅ **Mobile-Responsive**: Mobile-first design
+
+### Target Keywords:
+- Water tanks Saudi Arabia
+- GRP tanks KSA / HDG steel tanks / Stainless steel tanks
+- Panel tanks Dammam / Water storage solutions
+- Industrial water tanks Riyadh / Jeddah
+- NSF certified tanks / WRAS approved tanks
+
+### Next Steps for Google Visibility:
+1. **Submit to Google Search Console** - Add sitemap.xml
+2. **Create Google Business Profile** - For local SEO
+3. **Submit to Bing Webmaster Tools**
+4. **List on business directories** (Saudi Yellow Pages, etc.)
+5. **Get customer reviews** on Google
+
+📖 **See [SEO-GUIDE.md](SEO-GUIDE.md) for detailed instructions**
 
 ## Browser Support
 - Chrome (latest)
