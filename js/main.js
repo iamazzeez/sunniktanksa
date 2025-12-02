@@ -42,15 +42,44 @@ navLinks.forEach(link => {
     });
 });
 
-// Smooth scroll and active link management
+// Enhanced smooth scroll and active link management
 const sections = document.querySelectorAll('section');
+const scrollToSection = (selector) => {
+    const element = document.querySelector(selector);
+    if (element) {
+        window.scrollTo({
+            top: element.offsetTop - 80, // Adjust for fixed header
+            behavior: 'smooth'
+        });
+    }
+};
 
-window.addEventListener('scroll', () => {
+// Debounce function for scroll events
+function debounce(func, wait = 10, immediate = true) {
+    let timeout;
+    return function() {
+        const context = this, args = arguments;
+        const later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+// Update active link based on scroll position
+function updateActiveLink() {
     let current = '';
+    const scrollPosition = window.scrollY + 100; // Add offset for better UX
+    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= (sectionTop - 200)) {
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
         }
     });
@@ -61,21 +90,105 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
+}
+
+// Add smooth scroll to all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        scrollToSection(targetId);
+    });
 });
 
-// Carousel functionality
+// Update active link on scroll with debounce
+window.addEventListener('scroll', debounce(updateActiveLink));
+
+// Initial check on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateActiveLink();
+});
+
+// Enhanced Carousel functionality
 let currentSlide = 0;
+let slideInterval;
 const slides = document.querySelectorAll('.carousel-slide');
 const indicators = document.querySelectorAll('.indicator');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+
+// Initialize carousel
+function initCarousel() {
+    // Set initial active states
+    showSlide(0);
+    startAutoSlide();
+    
+    // Add event listeners for controls
+    prevBtn.addEventListener('click', () => {
+        changeSlide(-1);
+        resetAutoSlide();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        changeSlide(1);
+        resetAutoSlide();
+    });
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            changeSlide(-1);
+            resetAutoSlide();
+        } else if (e.key === 'ArrowRight') {
+            changeSlide(1);
+            resetAutoSlide();
+        }
+    });
+    
+    // Add swipe support for touch devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.querySelector('.carousel').addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    document.querySelector('.carousel').addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50; // Minimum distance to trigger slide change
+    const swipeDistance = touchStartX - touchEndX;
+    
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+        if (swipeDistance > 0) {
+            changeSlide(1); // Swipe left - next slide
+        } else {
+            changeSlide(-1); // Swipe right - previous slide
+        }
+        resetAutoSlide();
+    }
+}
 
 function showSlide(n) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
+    // Wrap around to first/last slide if needed
     currentSlide = (n + slides.length) % slides.length;
     
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
+    // Update slides
+    slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+        slide.style.opacity = index === currentSlide ? '1' : '0';
+    });
+    
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentSlide);
+    });
 }
 
 function changeSlide(n) {
@@ -84,12 +197,27 @@ function changeSlide(n) {
 
 function currentSlideFunc(n) {
     showSlide(n);
+    resetAutoSlide();
 }
 
-// Auto-advance carousel
-setInterval(() => {
-    changeSlide(1);
-}, 5000);
+function startAutoSlide() {
+    // Clear any existing interval
+    if (slideInterval) clearInterval(slideInterval);
+    
+    // Set new interval
+    slideInterval = setInterval(() => {
+        changeSlide(1);
+    }, 8000); // 8 seconds per slide
+}
+
+function resetAutoSlide() {
+    startAutoSlide();
+}
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initCarousel();
+});
 
 // Contact form submission
 const contactForm = document.getElementById('contactForm');
