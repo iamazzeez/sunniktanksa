@@ -1,12 +1,74 @@
+# robots.txt for Sunnik Tanks Saudi Arabia
+# Last Updated: 2025-12-02
+
+# Global directives for all crawlers
 User-agent: *
 Allow: /
 Disallow: /downloads/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /search
+Disallow: /*?*
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
 
+# Sitemap location
 Sitemap: https://sunniktanksa.com/sitemap.xml
 
-# Allow search engines to crawl the site
+# Crawl-delay: 10  # Uncomment and adjust if needed to prevent server overload
+
+# Specific search engine instructions
 User-agent: Googlebot
 Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /downloads/Aspire%20Tanks%20Photos/
+
+# Block specific pages
+Disallow: /thank-you/
+Disallow: /privacy-policy/
+
+# Social media crawlers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Bad bots to block
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Allow media files
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Allow web fonts
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+Allow: /*.eot$
+
+# Allow essential files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /favicon.ico
 
 User-agent: Bingbot
 Allow: /
